@@ -1,6 +1,6 @@
-import type { ZodSchema } from './types.ts';
+import type { ZodSchema } from './types';
 
-import jsonContent from './json-content.js';
+import { jsonContent } from './json-content';
 
 export function jsonContentRequired<
   T extends ZodSchema,
@@ -10,5 +10,3 @@ export function jsonContentRequired<
     required: true,
   };
 }
-
-export default jsonContentRequired;

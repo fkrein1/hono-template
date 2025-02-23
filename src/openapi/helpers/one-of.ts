@@ -3,9 +3,9 @@ import {
   OpenAPIRegistry,
 } from '@asteasolutions/zod-to-openapi';
 
-import type { ZodSchema } from './types.ts';
+import type { ZodSchema } from './types';
 
-function oneOf<
+export function oneOf<
   T extends ZodSchema,
 >(schemas: T[]) {
   const registry = new OpenAPIRegistry();
@@ -19,5 +19,3 @@ function oneOf<
 
   return components.components?.schemas ? Object.values(components.components!.schemas!) : [];
 }
-
-export default oneOf;

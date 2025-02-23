@@ -1,4 +1,4 @@
-import type { ZodSchema } from './types.ts';
+import type { ZodSchema } from './types';
 
 export function jsonContent<
   T extends ZodSchema,
@@ -12,5 +12,3 @@ export function jsonContent<
     description,
   };
 }
-
-export default jsonContent;

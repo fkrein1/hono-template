@@ -31,5 +31,3 @@ export function getParamsSchema({
     }),
   });
 }
-
-export default getParamsSchema;

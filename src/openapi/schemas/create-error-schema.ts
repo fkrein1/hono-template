@@ -1,6 +1,6 @@
 import { z } from '@hono/zod-openapi';
 
-import type { ZodSchema } from '@/openapi/helpers/types.ts';
+import type { ZodSchema } from '@/openapi/helpers/types';
 
 export function createErrorSchema<
   T extends ZodSchema,
@@ -33,5 +33,3 @@ export function createErrorSchema<
       }),
   });
 }
-
-export default createErrorSchema;

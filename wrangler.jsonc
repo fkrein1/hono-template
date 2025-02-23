@@ -2,7 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hono-template",
   "main": "src/server.ts",
-  "compatibility_date": "2025-02-22"
+  "compatibility_date": "2025-02-22",
+  "dev": {
+    "port": 8080
+  },
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

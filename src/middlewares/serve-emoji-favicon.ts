@@ -9,5 +9,3 @@ export function serveEmojiFavicon(emoji: string): MiddlewareHandler {
     return next();
   };
 }
-
-export default serveEmojiFavicon;

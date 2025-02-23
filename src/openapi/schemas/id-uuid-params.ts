@@ -11,5 +11,3 @@ export const IdUUIDParamsSchema = z.object({
     example: '4651e634-a530-4484-9b09-9616a28f35e3',
   }),
 });
-
-export default IdUUIDParamsSchema;

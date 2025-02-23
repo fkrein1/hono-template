@@ -1,5 +1,5 @@
-export { default as createErrorSchema } from './create-error-schema.js';
-export { default as createMessageObjectSchema } from './create-message-object.js';
-export { default as IdParamsSchema } from './id-params.js';
-export { default as IdUUIDParamsSchema } from './id-uuid-params.js';
-export { default as SlugParamsSchema } from './slug-params.js';
+export { createErrorSchema } from './create-error-schema';
+export { createMessageObjectSchema } from './create-message-object';
+export { IdParamsSchema } from './id-params';
+export { IdUUIDParamsSchema } from './id-uuid-params';
+export { SlugParamsSchema } from './slug-params';

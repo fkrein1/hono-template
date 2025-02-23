@@ -17,5 +17,3 @@ export const SlugParamsSchema = z.object({
       example: 'my-cool-article',
     }),
 });
-
-export default SlugParamsSchema;

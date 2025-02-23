@@ -1,7 +1,11 @@
 import type { ErrorHandler } from 'hono';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
-import { INTERNAL_SERVER_ERROR, OK } from '@/utils/http-status-codes.js';
+import { env } from 'hono/adapter';
+
+import type { AppEnv } from '@/lib/types';
+
+import { INTERNAL_SERVER_ERROR, OK } from '@/utils/http-status/http-status-codes';
 
 export const onError: ErrorHandler = (err, c) => {
   const currentStatus = 'status' in err
@@ -10,16 +14,14 @@ export const onError: ErrorHandler = (err, c) => {
   const statusCode = currentStatus !== OK
     ? (currentStatus as ContentfulStatusCode)
     : INTERNAL_SERVER_ERROR;
-  const env = c.env?.NODE_ENV || process.env.NODE_ENV;
+  const { ENVIRONMENT } = env<AppEnv>(c);
   return c.json(
     {
       message: err.message,
-      stack: env === 'production'
+      stack: ENVIRONMENT === 'production'
         ? undefined
         : err.stack,
     },
     statusCode,
   );
 };
-
-export default onError;

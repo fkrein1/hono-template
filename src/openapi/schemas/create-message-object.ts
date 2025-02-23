@@ -9,5 +9,3 @@ export function createMessageObjectSchema(exampleMessage: string = 'Hello World'
     },
   });
 }
-
-export default createMessageObjectSchema;
