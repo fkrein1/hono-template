@@ -4,7 +4,11 @@ export interface AppEnv extends Record<string, unknown> {
   ENVIRONMENT: string;
 }
 
-export interface AppBindings {};
+export interface AppBindings {
+  Bindings: {
+    DB: D1Database;
+  };
+};
 
 export type AppOpenAPI = OpenAPIHono<AppBindings>;
 

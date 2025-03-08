@@ -4,12 +4,14 @@ import { logger } from 'hono/logger';
 import { notFound, onError, serveEmojiFavicon } from '@/middlewares';
 import { defaultHook } from '@/openapi/default-hook';
 
+import type { AppBindings } from './types';
+
 export function createRouter() {
-  return new OpenAPIHono({ strict: false, defaultHook });
+  return new OpenAPIHono<AppBindings>({ strict: false, defaultHook });
 }
 
 export function createApp() {
-  const app = new OpenAPIHono({ strict: false });
+  const app = createRouter();
 
   app.notFound(notFound);
   app.onError(onError);

@@ -2,20 +2,28 @@
   "name": "hono-template",
   "version": "1.0.0",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "wrangler dev --remote",
     "deploy": "wrangler deploy --minify",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.3.0",
     "@hono/zod-openapi": "^0.18.4",
     "@scalar/hono-api-reference": "^0.5.175",
+    "drizzle-orm": "^0.40.0",
+    "drizzle-zod": "^0.7.0",
     "hono": "^4.7.2",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "4.3.0",
     "@cloudflare/workers-types": "4.20250214.0",
+    "@types/bun": "^1.2.4",
+    "drizzle-kit": "^0.30.5",
     "eslint": "9.21.0",
     "eslint-plugin-format": "1.0.1",
     "wrangler": "3.109.2"
